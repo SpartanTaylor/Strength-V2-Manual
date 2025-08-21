@@ -11,10 +11,23 @@
 <body>
   <h1>Strength</h1>
 
-  <label>Top Set Weight (lbs): <input id="topLbs" type="number"/></label>
-  <label>Top Set Weight (kg): <input id="topKg" type="number"/></label>
+  <!-- Unit Toggle -->
+  <label>
+    Units: 
+    <select id="unitToggle">
+      <option value="lbs">lbs</option>
+      <option value="kg">kg</option>
+    </select>
+  </label>
+
+  <!-- Bar weight -->
+  <label>Bar weight: <input id="barWeight" type="number" value="20"/></label>
+
+  <!-- Top set -->
+  <label>Top Set Weight: <input id="topWeight" type="number"/></label>
   <label>Reps: <input id="reps" type="number"/></label>
 
+  <!-- RIR/RPE dropdown -->
   <label>How many reps do I want left in reserve?
     <select id="rir">
       <option value="10">0 RIR / 10 RPE</option>
@@ -28,14 +41,22 @@
     </select>
   </label>
 
+  <!-- Backoff slider -->
   <p>Backoff % of today’s e1RM: 
-    <input type="range" id="backoffSlider" min="0" max="100" value="75"/> 
+    <input type="range" id="backoffSlider" min="50" max="100" value="75" style="width:100%"/> 
     <span id="backoffPercent">75%</span>
   </p>
 
+  <!-- Results -->
   <h2>Results</h2>
   <p id="e1rm">Today's estimated 1RM: –</p>
   <p id="backoff">Backoff weight to use: –</p>
   <p id="plates">Plate breakdown: –</p>
+
+  <!-- Settings -->
+  <h2>Settings</h2>
+  <label>Available plates (comma separated): 
+    <input id="platesInput" type="text" value="45,35,25,10,5,2.5"/>
+  </label>
 </body>
 </html>
