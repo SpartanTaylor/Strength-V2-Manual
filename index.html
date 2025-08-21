@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Strength</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="app.js"></script>
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <h1>Strength</h1>
+
+  <label>Top Set Weight (lbs): <input id="topLbs" type="number"/></label>
+  <label>Top Set Weight (kg): <input id="topKg" type="number"/></label>
+  <label>Reps: <input id="reps" type="number"/></label>
+
+  <label>How many reps do I want left in reserve?
+    <select id="rir">
+      <option value="10">0 RIR / 10 RPE</option>
+      <option value="9.5">0.5 RIR / 9.5 RPE</option>
+      <option value="9">1 RIR / 9 RPE</option>
+      <option value="8.5">1.5 RIR / 8.5 RPE</option>
+      <option value="8">2 RIR / 8 RPE</option>
+      <option value="7.5">2.5 RIR / 7.5 RPE</option>
+      <option value="7">3 RIR / 7 RPE</option>
+      <option value="6.5">3.5 RIR / 6.5 RPE</option>
+    </select>
+  </label>
+
+  <p>Backoff % of today’s e1RM: 
+    <input type="range" id="backoffSlider" min="0" max="100" value="75"/> 
+    <span id="backoffPercent">75%</span>
+  </p>
+
+  <h2>Results</h2>
+  <p id="e1rm">Today's estimated 1RM: –</p>
+  <p id="backoff">Backoff weight to use: –</p>
+  <p id="plates">Plate breakdown: –</p>
+</body>
+</html>
